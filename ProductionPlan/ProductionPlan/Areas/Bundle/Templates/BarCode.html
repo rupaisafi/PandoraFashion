@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../../Content/Js/jquery-1.10.2.min.js"></script>
+    <script src="../../../Content/Js/BarCodeGenerator.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ctx_barcode').barcode('2114356141156', 'ean13')
+        });
+    </script>
+    <style type="text/css">
+        .header{
+            text-align:center;
+        }
+        .barcode_container{
+            width:100px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body style="width:210px;">
+    <div class="header">
+        Pandora Sweaters LTD
+        <br />
+        Bundle Card
+    </div>
+    <hr />
+    <div class="barcode_container">
+        <canvas id="ctx_barcode" width="100" height="70">
+
+        </canvas>
+    </div>
+    <hr />
+    <table>
+        <tr>
+            <td>
+                Code Number
+            </td>
+            <td>
+                789543234567
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Style Number
+            </td>
+            <td>
+                123875456789
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@model ProductionPlan.Areas.User.DAL.LogIn_Result
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="formContainer">
+    <div class="empty_style button_container row">
+        <a href="#" class="btn btn-white btn-default btn-round pull-right" id="btn_Add_new"><span class="glyphicon glyphicon-plus"></span>New</a>
+    </div>
+    <div id="table_data_container" class="dataTables_wrapper form-inline no-footer">
+    </div>
+</div>
+
+
+
+<script src="@Url.Content("~/Areas/Bundle/Content/Bundle.js")"></script>
+<script src="@Url.Content("~/Content/Js/DatePicker.js")"></script>
+<link href="~/Content/Css/datepicker.css" rel="stylesheet" />
+<script type="text/javascript">
+    Bundle.Grid.SetPageModel(@Html.Raw(Model.Roles));
+</script>
+
+
+@*<canvas id="bcTarget"></canvas>
+    <script src="~/Content/Js/BarCodeGenerator.js"></script>
+    <script type="text/javascript">
+
+        $("#bcTarget").barcode("0234567890128", "ean13");
+    </script>*@

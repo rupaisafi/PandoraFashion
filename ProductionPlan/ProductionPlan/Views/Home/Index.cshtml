@@ -1,0 +1,83 @@
+﻿@model ProductionPlan.Areas.User.DAL.LogIn_Result
+@{
+    ViewBag.Title = "Running Orders";
+}
+
+<style type="text/css">
+
+
+
+    .order_container li{
+        float:left;
+        list-style-type:none;
+    } 
+    .item {
+        width: 300px;
+        height: 80px;
+    }
+    .item .color{
+        height:100%;
+    }
+        .item .color.blue {
+            background-color:blue;
+        }
+        .item .color.yellow {
+            background-color: yellow;
+        }
+        .item .color.red {
+            background-color: red;
+        }
+        .item .details .progress {
+            height: 10px;
+            background-color: red;
+            width: calc(100% - 30px);
+            position: relative;
+            margin-bottom:5px;
+            border-radius:1px;
+        }
+            .item .details .progress .progress-bar {
+                width: 30%;
+                background-color: green;
+                position: absolute;
+                top: 1px;
+                height: 7px;
+            }
+</style>
+
+<div class="row">
+    <div class="title col-md-6"></div>
+    <div class=" col-md-6">
+        <div class="empty_style button_container row pull-right">
+            <a href="#" class="btn btn-white btn-default btn-round pull-right" id="btn_Add_new"><span class="glyphicon glyphicon-plus"></span>New</a>
+        </div>
+    </div>
+</div>
+<div class="order_container">
+    
+    <ul id="order_container_ul" class="row empty_style">
+        
+        <li>
+            <div class="item row">
+                <div class="color red col-md-3">
+
+                </div>
+                <div class="details col-md-3">
+                    dasdasdasdas
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item row">
+                <div class="color yellow col-md-3">
+
+                </div>
+                <div class="details col-md-3">
+                    dasdasdasdas
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script src="~/Areas/Order/Content/Order.js"></script>
+<script src="~/Content/Js/DatePicker.js"></script>
+<link href="~/Content/Css/datepicker.css" rel="stylesheet" />

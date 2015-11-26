@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="41a46eab16304728a641e0abf203e50a" Name="Diagram1">
+        <EntityTypeShape EntityType="AppDBModel.Bundle" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AppDBModel.Buyer" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="AppDBModel.Employee" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="AppDBModel.Machine" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AppDBModel.Material" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AppDBModel.Order" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="AppDBModel.Role" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AppDBModel.Seller" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AppDBModel.Status" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="AppDBModel.Store" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AppDBModel.Style" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AppDBModel.MaterialSeller" Width="1.5" PointX="4.75" PointY="10.75" />
+        <AssociationConnector Association="AppDBModel.FK_Order_Buyer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

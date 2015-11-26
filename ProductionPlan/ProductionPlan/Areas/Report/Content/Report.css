@@ -1,0 +1,117 @@
+﻿*{
+  margin: 0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+
+html{
+  font-family:'Trebuchet MS';
+}
+
+.pre-plan{
+  margin: 0px auto;
+  width: calc(100% - 80px);
+}
+
+.style-head{
+   padding: 15px 0px;  
+}
+
+hr{
+  border: 0px solid transparent;
+  border-bottom: 1px solid #dadada;
+}
+
+.style-body{
+  padding: 15px 0px;
+ 
+}
+
+.textbox{
+  width: 100%;
+  padding: 4px 6px;  
+  display: inline-block;  
+  border: 1px solid transparent;
+  
+}
+
+.textbox:focus{
+  background-color: #f5f5f5;
+}
+
+.css-table{
+  width: 100%;
+  display: table;
+}
+
+.half-w{
+ width: 50%;
+}
+
+.bord-r{
+  border-right: 1px solid #dadada; 
+}
+.bord-b{
+  border-bottom: 1px solid #dadada; 
+}
+.text-c{
+  text-align: center;
+}
+
+.text-l{
+  text-align: left;
+}
+.text-r{
+  text-align: right;
+}
+
+.css-row{
+  display: table-row;
+}
+
+.css-cell{  
+  text-align: center;
+  display: table-cell;
+}
+
+.dir-lr{
+  direction: ltr;
+}
+.dir-rl{
+  direction: rtl;
+}
+
+table.plan-form{
+  width: 100%;
+  font-size: 12px;
+  font-family:aerial,times new roman;
+  border-collapse: collapse; 
+  background-color: #ffffff;
+  border: 1px solid cornflowerblue;  
+}
+
+td{
+  border-collapse: collapse; 
+  border: 1px solid cornflowerblue;  
+}
+
+td:nth-of-type(1){
+  width:50px;
+  text-align: center;
+}
+
+td:nth-of-type(2){
+  width:180px;
+  padding-left:8px; 
+  text-align: left;
+}
+
+.result-row td{
+  background:#dadada;
+  padding: 5px 0;
+}
+
+.operation-row td{
+ color: #fff;
+  background-color: cornflowerblue;
+}

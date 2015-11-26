@@ -1,0 +1,65 @@
+﻿<div class="formContainer">
+    <div class="col-sm-12 col-md-12 col-lg-12 formBody">
+        <div class="row formHeader headerFormMenu">
+            <div style="float: left" class="widget-title"><h4 style="margin:5px;">New Style</h4></div>
+            <span class="pull-right button_container"><a class="button btn_cancel"><span class="glyphicon glyphicon-remove"></span></a></span>
+        </div>
+        <form class="middleForm" action="#">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="col-sm-12 col col-md-6">
+                        <label for="cells">StyleId</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="ace-icon fa fa-hospital"></i>
+                            </span>
+                            <select required data-binding="StyleId" name="StyleId" class="form-control"></select>
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6">
+                        <div><label for="StartDate">KnittingMachine</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            <input type="text" data-binding="KnittingMachine" name="KnittingMachine" class="form-control k-textbox">
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6">
+                        <label for="cells">Operator</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="ace-icon fa fa-hospital"></i>
+                            </span>
+                            <select required data-binding="OperatorId" name="OperatorId" class="form-control"></select>
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6 ">
+                        <div><label for="Name">Quantity</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-tag"></span>
+                            </span>
+                            <input type="text" name="Quantity" required data-binding="Quantity" class="form-control" />
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center formFooter FooterFormMenu">
+                    <button class="btn btn_save btn-white btn-default btn-round" type="submit">
+                        <span class="glyphicon glyphicon-save"></span>
+                        Save
+                    </button>
+                    <button class="btn btn_cancel btn-white btn-default btn-round" type="button">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<div class="login_form">
+    <div class="form_header">LOGIN</div>
+    <div class="login_form_container">
+        <form id="login_form" action="/Account/LogIn" class="" method="post" role="form">
+            <div class="">
+                <div class="col-xs-12 input_container row">
+                    <div class="col-xs-4 field_title">Username</div>
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <input class="form-control" data-binding="UserName" required maxlength="50" data-minlength="5" data-val="true" name="UserName" placeholder="UserName" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-xs-4 field_title">Password</div>
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <input class="form-control" data-binding="Password" required data-minlength="5" name="Password" placeholder="Password" type="password" />
+                        </div>
+                    </div>
+                    <div class="col-xs-4 field_title"><input id="remember_me" class="check-box" data-binding="RememberMe" name="RememberMe" type="checkbox" /></div>
+                    <div class="col-xs-8 label_text">
+                        <label for="remember_me"> Remember me </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn_save btn-white btn-default btn-round">
+                    <span class="glyphicon glyphicon-save"></span>
+                    Login
+                </button>
+                <button id="btn_forget_passwoed" type="button" class="btn btn-white btn-default btn-round">
+                    <span class="glyphicon glyphicon-open"></span>
+                    Forget Password
+                </button>
+                <div class="clearfix"></div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Areas/User/Content/Login.js"></script>

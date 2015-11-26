@@ -1,0 +1,48 @@
+﻿@model ProductionPlan.Areas.User.DAL.LogIn_Result
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="formContainer">
+    <form id="add_form" action="/Bundle/Issuing/Save" method="post" class="button_container row" style="margin-bottom:20px;">
+        <div class="col-md-3">
+            <div><label for="StartDate">Employee BarCode</label></div>
+            <div class="input-group">
+                <input type="text" id="employeeBarCode" data-binding="employeeBarCode" name="employeeBarCode" class="form-control k-textbox">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div><label for="StartDate">Bundle BarCode</label></div>
+            <div class="input-group">
+                <input type="text" id="bundleBarCode" data-binding="bundleBarCode" name="bundleBarCode" class="form-control k-textbox">
+            </div>
+        </div>
+        <div class="col-md-3  pull-right" style="margin-top:20px;">
+            <button id="btn_save" class="btn btn_save btn-white btn-default btn-round" type="submit">
+                <span class="glyphicon glyphicon-save"></span>
+                Save
+            </button>
+        </div>
+    </form>
+    <div id="table_data_container" class="dataTables_wrapper form-inline no-footer">
+    </div>
+</div>
+
+
+<script src="@Url.Content("~/Areas/Bundle/Content/Issuing/Issuing.js")"></script>
+<script src="@Url.Content("~/Content/Js/DatePicker.js")"></script>
+<link href="~/Content/Css/datepicker.css" rel="stylesheet" />
+<script type="text/javascript">
+    Issuing.Grid.SetPageModel(@Html.Raw(ViewBag.Page));
+</script>
+
+
+@*<canvas id="bcTarget"></canvas>
+    <script src="~/Content/Js/BarCodeGenerator.js"></script>
+    <script type="text/javascript">
+
+        $("#bcTarget").barcode("0234567890128", "ean13");
+    </script>*@

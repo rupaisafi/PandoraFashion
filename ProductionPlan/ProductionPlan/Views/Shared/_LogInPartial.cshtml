@@ -1,0 +1,86 @@
+﻿@model ProductionPlan.Areas.User.DAL.LogIn_Result
+@{
+    Layout = null;
+    //string imageUrl = Model.Photo == null ? "/Content/Images/default-man.png" : "data:image/jpeg;base64," + Convert.ToBase64String(Model.Photo);
+    //string imageUrl = "/CitizenData/GetFacialImageByCitizenId?citizenId=" + Model.CitizenId;
+}
+@if (Model!=null)
+{
+    <div class="navbar-container nav_head" id="navbar-container">
+            <!-- #section:basics/sidebar.mobile.toggle -->
+        <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" id="menu-toggler">
+            <div class="glyphicon glyphicon-align-justify"></div>
+        </button>
+            <!-- /section:basics/sidebar.mobile.toggle -->
+        <div class="navbar-header pull-left" id="nav_left">
+            <div id="go_app_logo" style="width: 60px;"></div>
+        </div>
+        <div class="navbar-header pull-left" id="nav_left">
+            <div id="go_app_logo" style="background-image: none; padding-top: 5px;"><span class="small_font">Population Management</span></div>
+        </div>
+            <!-- #section:basics/navbar.dropdown -->
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul id="notifications_container" class="nav ace-nav">
+                    
+                    <li class="light-blue">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="user_image_container"><img src="/Content/Images/default-man.png"></span>
+                            <span>@Model.Name</span> <b class="caret"></b>
+                        </a>
+                        <!--Notification Dropdown-->
+                        <ul class="pull-right dropdown-menu dropdown-arrow dropdown-notifications profile_form_container">
+                            <li class="dropdown-header" role="presentation">
+                                <span>You are login as</span>
+                                <span>@Model.Name</span>
+                            </li>
+                            <li>
+                                <a id="btn_change_password" style="width:100%">
+                                    <div class="clearfix">
+                                        <div class="notification-icon pull-left">
+                                            <i class="fa fa-key"></i>
+                                        </div>
+                                        <div class="notification-body pull-right">
+                                            <span class="description">Change Password</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/" style="width:100%">
+                                    <div class="clearfix">
+                                        <div class="notification-icon pull-left">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="notification-body pull-right">
+                                            <span class="description">My Account</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/User/Account/LogOff/" style="width:100%">
+                                    <div class="clearfix">
+                                        <div class="notification-icon pull-left">
+                                            <i class="fa fa-power-off"></i>
+                                        </div>
+                                        <div class="notification-body pull-right">
+                                            <span class="description">Logout</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /section:basics/navbar.dropdown -->
+        </div>
+}
+else
+{
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-key"></i> Login</a>
+    <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated fadeInUp">
+        @*@Html.Partial("_LogInFormPartial")*@
+    </div>
+}
+

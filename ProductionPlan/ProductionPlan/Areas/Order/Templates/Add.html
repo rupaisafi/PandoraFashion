@@ -1,0 +1,106 @@
+﻿<div class="formContainer">
+    <div class="col-sm-12 col-md-12 col-lg-12 formBody">
+        <div class="row formHeader headerFormMenu">
+            <div style="float: left" class="widget-title"><h4 style="margin:5px;">New Order</h4></div>
+            <span class="pull-right button_container"><a class="button btn_cancel"><span class="glyphicon glyphicon-remove"></span></a></span>
+        </div>
+        <form class="middleForm" action="#">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="col-sm-12 col col-md-6">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="cells">Buyer</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="ace-icon fa fa-hospital"></i>
+                                    </span>
+                                    <select required data-binding="BuyerId" name="BuyerId" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="empty_style button_container row pull-left" style="margin-top:20px;">
+                                    <a href="#" class="btn btn-white btn-default btn-round pull-right" id="btn_Add_new"><span class="glyphicon glyphicon-plus"></span>New</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6 ">
+                        <div><label for="Name">Quantity</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-tag"></span>
+                            </span>
+                            <input type="number" value="" min="1" required data-binding="Quantity" name="Quantity" class="form-control">
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6 ">
+                        <div><label for="Surnames">Style</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-tag"></span>
+                            </span>
+                            <input required type="text" data-binding="Style" name="Style" class="form-control">
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6">
+                        <div><label for="Phone">Color</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-earphone"></span>
+                            </span>
+                            <input required type="text" data-binding="Color" value="" name="Color" class="form-control">
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6">
+                        <div><label for="eMail">Size</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </span>
+
+                            <input required type="text" data-binding="Size" value="" name="Size" class="form-control">
+                        </div>
+                    </section>
+                    <section class="col-sm-12 col col-md-6">
+                        <div><label for="StartDate">Delivery Date</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            <input required type="text" data-binding="DeliveryDate" data-dateformat="dd/MM/yyyy" name="DeliveryDate" class="form-control k-textbox" autocomplete="off">
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="col-md-12 col col-md-12">
+                        <div><label for="BirthTypeId">Description</label></div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="ace-icon fa fa-child fa fa-child green"></i>
+                            </span>
+                            <textarea name="Description" data-binding="Description" class="form-control"></textarea>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center formFooter FooterFormMenu">
+                    <button class="btn btn_save btn-white btn-default btn-round" type="submit">
+                        <span class="glyphicon glyphicon-save"></span>
+                        Save
+                    </button>
+                    <button class="btn btn_cancel btn-white btn-default btn-round" type="button">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

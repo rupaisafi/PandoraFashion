@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewBag.Title = "Daily";
+}
+
+
+<link href="~/Areas/Report/Content/Report.css" rel="stylesheet" />
+
+
+    <style>
+        html {
+            font-family: Verdana;
+            background-color: #f1f1f1;
+        }
+        #main-container {
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+        .page-content-wrapper .page-content {
+            margin-top: 10px;
+            padding: 0;
+        }
+        .pre-plan {
+            margin: 0 auto;
+            width: calc(100% - 20px);
+        }
+            .pre-plan td .textbox.text-c {
+                border:0;
+            }
+    </style>
+<link href="~/Content/Css/datepicker.css" rel="stylesheet" />
+<script src="~/Content/Js/DatePicker.js"></script>
+<section class="pre-plan">
+    <div class="style-head">
+        <p class="head-title">Pandora Sweater Limited.</p>
+        <p class="head-title">Pandora Fashion Limited.</p>
+        <p class="head-title">Daily Report.</p>
+        <p class="head-title">Industrial Engineering Department.</p>
+    </div>
+    <div>
+        <label>Showing Report At</label>
+        <input type="text" value="@DateTime.Now.ToString("dd/MM/yyyy")" id="showing_date" />
+        <script type="text/javascript">
+            DatePicker.Bind($('#showing_date'), { format: 'dd/MM/yyyy' });
+        </script>
+    </div>
+    <div class="style-body">
+        <table class="plan-form">
+            <tr>
+                <td class="cell text-c">No.</td>
+                <td class="cell text-c" style="width:160px;">Style Name</td>
+                <td class="cell text-c">SMV</td>
+                <td class="cell text-c">Operation Name</td>
+                <td class="cell text-c">Man Power</td>
+                <td class="cell text-c">Working Minutes</td>
+                <td class="cell text-c">Achive PCS</td>
+                <td class="cell text-c">Target Minute</td>
+                <td class="cell text-c">Achive Minute</td>
+                <td class="cell text-c">Loss time</td>
+                <td class="cell text-c">Total Achive Minute</td>
+                <td class="cell text-c">EFF%</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Style 1  </td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Style 2</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Style 2</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Style 4  </td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Style 5</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Style 6</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Style 7 </td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Style 8</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Style 9</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Style 10</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Style 11</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Style 12</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Style 13  </td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Style 14</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Style 15</td>
+                <td><input class="textbox text-c" type="text" name="SMV" /></td>
+                <td><input class="textbox text-c" type="text" name="MachineType" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetPcs" /></td>
+                <td><input class="textbox text-c" type="text" name="ExpectedTargetHrs" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+                <td><input class="textbox text-c" type="text" name="OperationType" /></td>
+                <td><input class="textbox text-c" type="text" name="SkillLevel" /></td>
+                <td><input class="textbox text-c" type="text" name="CMCostCenter" /></td>
+            </tr>
+        </table>
+
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</section>

@@ -1,0 +1,21 @@
+﻿@model ProductionPlan.Areas.User.DAL.LogIn_Result
+@{
+   ViewBag.Title = "Production Plan | Inhand Order";
+   Layout = "~/Areas/Order/Views/Shared/_OrderLayout.cshtml";
+}
+<link href="~/Content/Css/datepicker.css" rel="stylesheet" />
+
+<div class="formContainer">
+   <div class="empty_style button_container row">
+      <a href="#" class="btn btn-white btn-default btn-round pull-right" id="btn_Add_new"><span class="glyphicon glyphicon-plus"></span>New</a>
+   </div>
+   <div id="table_data_container" class="dataTables_wrapper form-inline no-footer">
+   </div>
+</div>
+
+<script src="@Url.Content("~/Content/Js/DatePicker.js")"></script>
+<script src="@Url.Content("~/Areas/Employee/Content/Employee.js")"></script>
+<script type="text/javascript">
+    Employee.Grid.SetPageModel(@Html.Raw(ViewBag.Page));
+</script>
+
