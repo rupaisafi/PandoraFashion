@@ -317,6 +317,7 @@
     <Content Include="Areas\Order\Content\Add.js" />
     <Content Include="Areas\Order\Content\Dashboard.js" />
     <Content Include="Areas\Order\Content\Order.js" />
+    <Content Include="Areas\Order\Content\Ordernew.js" />
     <Content Include="Areas\Order\Templates\Details.html" />
     <Content Include="Areas\Order\Templates\Add.html" />
     <Content Include="Areas\Report\Content\Report.css" />
@@ -520,7 +521,6 @@
     <Folder Include="Areas\Seller\Views\SellerActions\" />
     <Folder Include="Areas\Seller\Views\Shared\" />
     <Folder Include="Areas\Style\Views\Shared\" />
-    <Folder Include="NewFolder1 - Copy\" />
     <Folder Include="Templates\" />
   </ItemGroup>
   <ItemGroup>

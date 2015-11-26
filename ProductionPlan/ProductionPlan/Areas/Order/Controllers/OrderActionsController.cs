@@ -53,29 +53,29 @@ namespace ProductionPlan.Areas.Order.Controllers
     [AuthorizeUser(AccessLevel = "ADM")]
     public ActionResult Get(Page model)
     {
-      ResponseJson response = new ResponseJson();
+      ResponseJson response = new ResponseJson() { Data = new List<object>() };
       using (AppDB db = new AppDB())
       {
-        response.Data = (from o in db.Orders
-                         join b in db.Buyers on o.BuyerId equals b.Id
-                         where o.Status != 10
-                         select new OrderModel()
-                         {
-                           Id = o.Id,
-                           Buyer = b.Name,
-                           BuyerId = o.BuyerId,
-                           CodeNumber = o.CodeNumber,
-                           Color = o.Color,
-                           DeliveryDate = o.DeliveryDate,
-                           Description = o.Description,
-                           Size = o.Size,
-                           Style = o.Style,
-                           Quantity = o.TotalQuantity,
-                           Completed = o.TotalCompleted,
-                           ProductionStartAT = o.ProductionStartAT,
-                           OrderDate = o.OrderDate,
-                           CurrentDate = DateTime.Now
-                         }).ToList();
+        response = IEnumerableData.GetPageResponse<OrderModel>(model, (from o in db.Orders
+                                                                       join b in db.Buyers on o.BuyerId equals b.Id
+                                                                       where o.Status != 10
+                                                                       select new OrderModel()
+                                                                       {
+                                                                         Id = o.Id,
+                                                                         Buyer = b.Name,
+                                                                         BuyerId = o.BuyerId,
+                                                                         CodeNumber = o.CodeNumber,
+                                                                         Color = o.Color,
+                                                                         DeliveryDate = o.DeliveryDate,
+                                                                         Description = o.Description,
+                                                                         Size = o.Size,
+                                                                         Style = o.Style,
+                                                                         Quantity = o.TotalQuantity,
+                                                                         Completed = o.TotalCompleted,
+                                                                         ProductionStartAT = o.ProductionStartAT,
+                                                                         OrderDate = o.OrderDate,
+                                                                         CurrentDate = DateTime.Now
+                                                                       }).ToList());
 
       }
       return Json(response, JsonRequestBehavior.AllowGet);

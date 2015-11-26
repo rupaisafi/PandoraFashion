@@ -1,106 +1,108 @@
 ﻿var Order = new function () {
-    var that = this;
-    this.Grid = new function () {
-        var grid = this, view, gridModel, editableModel;
-        function getBackgroundColor(model) {
-            model.ProductionStartAT =model.ProductionStartAT? parseInt(model.ProductionStartAT.substring(6)):null;
-            model.CurrentDate =model.CurrentDate? parseInt(model.CurrentDate.substring(6)):null;
-            model.DeliveryDate =model.DeliveryDate? parseInt(model.DeliveryDate.substring(6)):null;
-
-            if (model.Completed && model.ProductionStartAT)
-            {
-                model.ProductionAccuracy = model.Completed / (model.CurrentDate - model.ProductionStartAT);
-                model.NeedAccuracy = model.Quantity / (model.DeliveryDate - model.ProductionStartAT);
-                model.BackgroundColor = model.ProductionAccuracy > model.NeedAccuracy ? 'blue' : model.ProductionAccuracy < model.NeedAccuracy ? 'red' : 'yellow';
-            }else{
-                model.BackgroundColor = 'yellow';
-            }
-            
-        };
-        function bind(data) {
-            var form = $('#order_container_ul');
-            form.empty();
-            if(data)
-            {
-                data.each(function () {
-                    this.CompletedP = (this.Completed / this.Quantity) * 100;
-                    getBackgroundColor(this);
-                    form.append(template(this));
-                    console.log(this);
-                });
-            }
-        };
-        this.Load = function () {
-            //var form = $(this).addClass('loading').closest('form').addClass('loading');
-            Global.CallServer('/Orders/Get/', function (response) {
-                //form.removeClass('loading');
-                if (!response.IsError && response.Data) {
-                    bind(response.Data);
-                    return;
-                } else {
-                    !response.Data && (response.ID = -1);
-                    //error.Search(response);
-                }
-            }, function (response) {
-                response.ID = -50;
-                //error.Search(response);
-                //form.removeClass('loading');
-            }, { }, 'POST')
-        };
-        function onDetails() {
-            Global.Controller.Call({
-                url: '/Areas/Order/Content/Details.js',
-                functionName: 'Show',
-                options: {
-                    model: this,
-                    onSaveSuccess: function () {
-                        //that.Grid.Reload();
-                    }
-                }
-            });
-        };
-        function template(model) {
-            var template = $('<li>'+
-            '<div class="item row">'+
-                '<div class="color ' + model.BackgroundColor + ' col-md-3 btn_edit">' +
-                '</div>'+
-                '<div class="details col-md-9">'+
-                    '<div class="title btn_edit">' + model.Buyer + '</div>' +
-                    '<div class="progress ' + model.BackgroundColor + '" style="">' +
-                        '<div class="progress-bar" style="width:'+model.CompletedP+'"></div>'+
-                    '</div>'+
-                    '<div class="Setting">Setting</div>'+
-                    '<div class="Share">Share</div>'+
-                '</div>'+
-            '</div>'+
-        '</li>').data('model', model);
-            template.find('.btn_edit').click(function () { onDetails.call(model); });
-            return template;
-        }
-        this.Load();
+  var that = this, name = 'Order';
+  this.Grid = new function () {
+    var grid = this, view, gridModel, editableModel;
+    function edit() {
+      var model = $(this).closest('tr').data('model');
+      editableModel = model;
+      that.Add.Open(model);
     };
-    this.Add = new function () {
-        var add = this;
-        function show(model) {
-            Global.Controller.Call({
-                url: '/Areas/Order/Content/Add.js',
-                functionName: 'Show',
-                options: {
-                    model: model,
-                    onSaveSuccess: function () {
-                        //that.Grid.Reload();
-                    }
-                }
-            });
-        };
-        this.Open = function (model) {
-            show(model);
-        };
-        this.Events = new function () {
-            $('#btn_Add_new').click(function () { show()});
-        };
+    function onDetails(e) {
+      e.stopPropagation();
+      var model = $(this).closest('tr').data('model');
+      Global.Controller.Call({
+        url: '/Areas/Employee/Content/Details.js',
+        functionName: 'Show',
+        options: {
+          model: { employeeId: model.Id }
+        }
+      });
+    };
+    function rowBound(elm) {
+      if (this.IsDeleted) {
+        elm.addClass('removed').find('.btn_delete').addClass('disabled');
+      }
+    };
+    function onDataBinding(response) {
+      response.Data.Data.each(function () {
+        this.OrderDate = new Date(parseInt(this.OrderDate.substring(6))).format('dd/MM/yyyy');
+        this.DeliveryDate = new Date(parseInt(this.DeliveryDate.substring(6))).format('dd/MM/yyyy');
+        this.ProductionStartAT = this.ProductionStartAT && new Date(parseInt(this.ProductionStartAT.substring(6))).format('dd/MM/yyyy');
+        this.CurrentDate = this.ProductionStartAT && new Date(parseInt(this.CurrentDate.substring(6))).format('dd/MM/yyyy');
+
+      });
+    };
+    this.SetPageModel = function (model) {
+      model.SortBy = model.SortBy || '';
+      grid.Bind(model);
+    };
+    this.Reload = function () {
+      gridModel.Reload();
+    };
+    this.Bind = function (page) {
+      gridModel = Global.Grid.Bind({
+        elm: $('#table_data_container'),
+        columns: [
+          //{ field: 'CodeNumber', title: 'CodeNumber' },
+          { field: 'Buyer', title: 'Buyer' },
+          { field: 'DeliveryDate', title: 'Delivery' },
+          { field: 'ProductionStartAT', title: 'Start' },
+          { field: 'Quantity', title: 'Quantity' },
+          { field: 'Completed', title: 'Completed' },
+          { field: 'Style', title: 'Style' },
+          { field: 'Color', title: 'Color' },
+          { field: 'Size', title: 'Size' },
+          { field: 'Description', title: 'Description' },
+          //{ field: 'OrderDate', title: 'OrderDate' },
+          //{ field: 'CurrentDate', title: 'CurrentDate' }
+        ],
+        url: '/' + name + 's/Get',
+        action: {
+          title: {
+            items: [1, 5, 10, 25, 50, 100],
+            selected: page.PageSize || 10,
+            baseUrl: '/' + name + 's',
+            showingInfo: 'Showing {0} to {1}  of {2}  ' + name + 's'
+          },
+          items: [{
+            click: edit,
+            html: '<span class="icon_container"><span class="glyphicon glyphicon-edit"></span></span>',
+          }, {
+            click: onDetails,
+            html: '<span class="icon_container" style="margin-left: 10px;"><span class="glyphicon glyphicon-open"></span></span>',
+          }],
+          className: 'action width_100'
+        },
+        dataBinding: onDataBinding,
+        //reportContainer: $('.breadcrumb .button_container'),
+        rowBound: rowBound,
+        page: page
+      });
+    };
+  };
+  this.Add = new function () {
+    var add = this;
+    function show(model) {
+      Global.Controller.Call({
+        url: '/Areas/' + name + '/Content/Add.js',
+        functionName: 'Show',
+        options: {
+          model: model,
+          onSaveSuccess: function () {
+            that.Grid.Reload();
+          }
+        }
+      });
+    };
+    this.Open = function (model) {
+      show(model);
     };
     this.Events = new function () {
+      $('#btn_Add_new').click(function () { show() });
+    };
+  };
+  this.Events = new function () {
 
-    }
+  }
 };
+
