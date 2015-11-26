@@ -349,6 +349,8 @@
     <Content Include="Content\Css\Global.css" />
     <Content Include="Content\Css\NewDashboard.css" />
     <Content Include="Content\Css\Uploader.css" />
+    <Content Include="Content\Dev\index.css" />
+    <Content Include="Content\Dev\index.js" />
     <Content Include="Content\Documents\005.JPG" />
     <Content Include="Content\Documents\007.JPG" />
     <Content Include="Content\Documents\019.JPG" />
